@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explorador de contenido aleatorio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="encabezado text-center py-4 mb-4">
+        <div class="container">
+            <h1 class="h2 fw-bold mb-1">Explorador de contenido aleatorio</h1>
+            <p class="mb-0 text-body-secondary">Citas, perros, gatos y datos curiosos obtenidos desde cuatro APIs públicas</p>
+        </div>
+    </header>
+
+    <main class="container contenedor-principal pb-5">
+        <div class="row g-4">
+
+            <!-- 1. Citas y autores — DummyJSON -->
+            <section class="col-12 col-md-6" aria-labelledby="titulo-cita">
+                <article class="card tarjeta h-100 shadow-sm">
+                    <div class="card-header tarjeta-cabecera">
+                        <h2 id="titulo-cita" class="h5 mb-0">Citas y autores</h2>
+                        <small class="text-body-secondary">DummyJSON</small>
+                    </div>
+                    <div class="card-body d-flex flex-column gap-3">
+                        <div id="cita-estado" class="estado" role="status" aria-live="polite"></div>
+                        <figure id="cita-contenido" class="cita mb-0 flex-grow-1" hidden>
+                            <blockquote class="blockquote mb-2">
+                                <p id="cita-texto" class="cita-texto"></p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer mb-0">
+                                <cite id="cita-autor"></cite>
+                            </figcaption>
+                        </figure>
+                        <button id="boton-cita" type="button" class="btn btn-primary mt-auto align-self-start">Obtener otra cita</button>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 2. Imágenes de perros — Dog CEO -->
+            <section class="col-12 col-md-6" aria-labelledby="titulo-perro">
+                <article class="card tarjeta h-100 shadow-sm">
+                    <div class="card-header tarjeta-cabecera">
+                        <h2 id="titulo-perro" class="h5 mb-0">Imágenes de perros</h2>
+                        <small class="text-body-secondary">Dog CEO</small>
+                    </div>
+                    <div class="card-body d-flex flex-column gap-3">
+                        <div class="marco-imagen">
+                            <img id="perro-imagen" class="imagen-aleatoria" alt="" hidden>
+                            <div id="perro-estado" class="estado estado-imagen" role="status" aria-live="polite"></div>
+                        </div>
+                        <button id="boton-perro" type="button" class="btn btn-primary mt-auto align-self-start">Mostrar otro perro</button>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 3. Imágenes de gatos — CATAAS -->
+            <section class="col-12 col-md-6" aria-labelledby="titulo-gato">
+                <article class="card tarjeta h-100 shadow-sm">
+                    <div class="card-header tarjeta-cabecera">
+                        <h2 id="titulo-gato" class="h5 mb-0">Imágenes de gatos</h2>
+                        <small class="text-body-secondary">CATAAS</small>
+                    </div>
+                    <div class="card-body d-flex flex-column gap-3">
+                        <div class="marco-imagen">
+                            <img id="gato-imagen" class="imagen-aleatoria" alt="" hidden>
+                            <div id="gato-estado" class="estado estado-imagen" role="status" aria-live="polite"></div>
+                        </div>
+                        <button id="boton-gato" type="button" class="btn btn-primary mt-auto align-self-start">Mostrar otro gato</button>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 4. Datos curiosos — Useless Facts -->
+            <section class="col-12 col-md-6" aria-labelledby="titulo-dato">
+                <article class="card tarjeta h-100 shadow-sm">
+                    <div class="card-header tarjeta-cabecera">
+                        <h2 id="titulo-dato" class="h5 mb-0">Datos curiosos</h2>
+                        <small class="text-body-secondary">Useless Facts</small>
+                    </div>
+                    <div class="card-body d-flex flex-column gap-3">
+                        <div id="dato-estado" class="estado" role="status" aria-live="polite"></div>
+                        <p id="dato-texto" class="dato-texto flex-grow-1 mb-0" hidden></p>
+                        <button id="boton-dato" type="button" class="btn btn-primary mt-auto align-self-start">Mostrar otro dato</button>
+                    </div>
+                </article>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="text-center text-body-secondary small pb-4">
+        Programación Web III — Consumo de APIs con fetch y async/await
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
